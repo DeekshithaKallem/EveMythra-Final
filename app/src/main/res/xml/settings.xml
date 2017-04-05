@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/download_mode_key"
+        android:summary="@string/summary_mode_download"
+        android:title="@string/settings_mode_download" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/timezone_mode_key"
+        android:summary="@string/summary_mode_timezone"
+        android:title="@string/settings_mode_timezone" />
+
+    <PreferenceCategory android:title="@string/settings_mode_notification">
+
+        <ListPreference
+            android:defaultValue="@string/default_mode_notification"
+            android:dialogTitle="@string/settings_mode_notification"
+            android:entries="@array/notification_mode_values"
+            android:entryValues="@array/notification_mode_values"
+            android:key="@string/notification_key" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="change_language_category"
+        android:title="@string/language_preferences">
+
+        <Preference
+            android:defaultValue="@string/default_mode_language"
+            android:key="@string/language_key"
+            android:title="@string/change_language" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

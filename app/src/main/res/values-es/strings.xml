@@ -1,0 +1,140 @@
+<resources>
+    <string name="title_section_tracks">Las Pistas</string>
+    <string name="title_section_speakerlist">Lista de oradores</string>
+    <string name="title_section_location">Lugar</string>
+
+    <!-- Main menu_speakers -->
+    <string name="menu_tracks">Las Pistas</string>
+    <string name="menu_bookmarks">Favoritos</string>
+    <string name="menu_speakers">Oradores</string>
+    <string name="menu_sponsor">Patrocinadores</string>
+    <string name="menu_map">Mapa</string>
+    <string name="menu_locations">Sitio</string>
+    <string name="menu_settings">Opciones</string>
+    <string name="menu_about">Sobre nosotros</string>
+    <string name="session">Sesión</string>
+
+    <!--Navigation Drawer-->
+    <string name="navigation_drawer_open">Ver las categorías</string>
+    <string name="navigation_drawer_close">Cerrar las categorías</string>
+
+    <string name="action_settings">Opciones</string>
+
+    <!--Settings-->
+    <string name="settings_mode_download">Descargue las actualizaciones sólo cuando con internet</string>
+    <string name="summary_mode_download">No utilice datos al actualizar horarios</string>
+    <string name="download_mode_key">Modo de internet</string>
+
+
+    <string name="settings_mode_notification">Activar Notificaciones</string>
+    <string name="default_mode_notification">10 minutos</string>
+    <string name="notification_key">Notificaciones</string>
+
+    <string name="settings_mode_timezone">Ver horarios locales </string>
+    <string name="summary_mode_timezone">Usar la zona horaria actual</string>
+    <string name="timezone_mode_key">Modo de zona horaria</string>
+    
+    <string name="language_preferences">Opciones de idioma</string>
+    <string name="change_language">Cambiar Idioma</string>
+    <string name="language_key">cambiar_idioma</string>
+    <string name="default_mode_language">Inglés</string>
+    
+    <!--Menu Titles-->
+    <string name="search">Buscar</string>
+    <string name="share">Compartir</string>
+
+
+    <!--Search Titles-->
+    <string name="search_hint_tracks">Buscar las pistas</string>
+    <string name="refresh_failed">No se pudo actualizar</string>
+    <string name="download_failed">Error al descargar</string>
+    <string name="download_complete">Descarga completa</string>
+    <string name="share_links">Compartir URL</string>
+    <string name="time_not_specified">Fecha no especificada</string>
+
+    <!--Error Titles-->
+    <string name="net_unavailable">No se pudo conectar</string>
+    <string name="turn_on">Encienda el wifi o los datos móviles</string>
+    <string name="error">Error</string>
+
+    <string name="empty_list">No hay favoritos</string>
+    <string name="bullet">"•"</string>
+    <string name="bookmarks">Favoritos</string>
+
+    <!--Speaker-->
+    <string name="subject">Perfil del orador</string>
+    <string name="message_1"> va a dar la charla a las </string>
+    <string name="message_2"> sobre los temas: </string>
+    <string name="message_3"> Para más información descarga esta app en Google Play Store: </string>
+    <string name="fmt_floor">"Piso: "</string>
+    <string name="noBookmark">No tiene ningún marcador</string>
+
+    <!--About us text-->
+    <string name="about_text">Programado por <a href="https://github.com/fossasia/open-event-android/graphs/contributors">FOSSASIA Contribuidores</a>.
+\n
+\nBajo la licencia GNU General Public License v3. Más información en <a href="https://github.com/fossasia/open-event-android">GitHub</a>.
+\n
+\nReportar los problemas en <a href="https://github.com/fossasia/open-event-android/issues/new">Github Repository Issue Tracker</a>.
+\n
+    </string>
+    <string name="invalid_url">URL errónea</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="website">Sitio web</string>
+    <string name="menu_speaker_sort">Ordenar</string>
+    <string name="dialog_sort_title">Ordenar Por</string>
+
+    <!--Speaker Sort Dialog text-->
+    <string name="dialog_sort_organisation">Organización</string>
+    <string name="dialog_sort_country">País</string>
+    <string name="dialog_sort_name">Nombre del orador</string>
+
+    <!--Session Sort Dialog text-->
+    <string name="dialog_sort_tracks">Las Pistas</string>
+    <string name="dialog_sort_sessions">Hora de la charla</string>
+
+
+    <string name="download_assets">¿Desea actualizar el horario?</string>
+    <string name="internet_preference_warning">Internet no disponible, ¿Desea mostra los horarios offline</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="noSessions">No hay sesiones!</string>
+    <string name="noMicrolocations">No hay ubicaciones!</string>
+    <string name="noSchedule">No hay horario!</string>
+    <string name="noSpeakers">No hay oradores!</string>
+    <string name="noSponsors">No hay patrocinadores!</string>
+    <string name="noTracks">No hay pistas!</string>
+    <string name="charges_warning">Se pueden aplicar cargos</string>
+    <string name="tracks">Pista:</string>
+    <string name="date">Fecha:</string>
+    <string name="start_time">Hora de inicio:</string>
+    <string name="end_time">Hora de finalización:</string>
+    <string name="location">Sitio:</string>
+    <string name="speakers">Orador:</string>
+
+    <!-- Sponsor types strings-->
+    <string name="platinum">Platino</string>
+    <string name="diamond">Diamante</string>
+    <string name="gold">Oro</string>
+    <string name="silver">Plata</string>
+    <string name="bronze">Bronce</string>
+
+    <!-- Sponsor types int strings-->
+
+    <string name="display_offline_schedule">No hay conexión a Internet. Mostrar calendario anterior.</string>
+    <string name="retry_download">Reintentar</string>
+    <string name="permissions_given">Permisos aceptados!</string>
+    <string name="storage_permission_rationale">Se requiere el permiso de almacenamiento para guardar los datos de los mapas.</string>
+    <string name="permissions_insufficient">Ir a la configuración y dar permisos.</string>
+    <string name="press_back_again">Toca otra vez para salir.</string>
+    
+    <!--SnackBar strings-->
+    <string name="waiting_for_network">Esperando para conectarse</string>
+    <string name="snackbar_refresh_action">Refrescar</string>
+
+    <!--Notification strings-->
+    <string name="check_connection">Revisar Conección</string>
+    <string name="open_your_web_brower_to_finish_connection_setting">Abre el navegador para terminar con la configuración de la conección</string>
+    <string name="removed_bookmark">Favorito Removido</string>
+    <string name="added_bookmark">Favorito Añadido</string>
+
+</resources>

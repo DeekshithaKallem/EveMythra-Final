@@ -1,0 +1,135 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+apply plugin: 'jacoco-everywhere'
+//apply plugin: 'android-apt'
+
+def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
+
+def isTravis = "true".equals(System.getenv("TRAVIS"))
+def preDexEnabled = "true".equals(System.getProperty("pre-dex", "true"))
+def SUPPORT_LIB_VERSION = "25.2.0"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    dexOptions {
+        // Skip pre-dexing when running on Travis CI or when disabled via -Dpre-dex=false.
+        preDexLibraries = preDexEnabled && !isTravis
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    defaultConfig {
+        applicationId "org.bvrit.evemythra"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        buildTypes {
+            debug {
+                testCoverageEnabled true
+            }
+            release {
+                zipAlignEnabled true
+                shrinkResources false
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                lintOptions {
+                    disable 'MissingTranslation'
+                }
+
+            }
+        }
+        dataBinding {
+            enabled true
+        }
+
+        productFlavors {
+            fdroid {
+            }
+            googleplay {
+            }
+        }
+        packagingOptions {
+            exclude 'META-INF/services/javax.annotation.processing.Processor'
+            exclude 'LICENSE.txt'
+        }
+        lintOptions {
+            abortOnError false
+            disable 'InvalidPackage'
+        }
+
+        // https://stackoverflow.com/questions/36833606/android-support-library-error-after-updating-to-23-3-0
+        configurations.all {
+            resolutionStrategy {
+                force "com.android.support:support-annotation:${SUPPORT_LIB_VERSION}"
+                force "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
+                force "com.android.support:support-v4:${SUPPORT_LIB_VERSION}"
+                force "com.android.support:recyclerview-v7:${SUPPORT_LIB_VERSION}"
+                force "com.android.support:design:${SUPPORT_LIB_VERSION}"
+                force "com.android.support:customtabs:${SUPPORT_LIB_VERSION}"
+            }
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        retrolambda {
+            javaVersion JavaVersion.VERSION_1_7
+        }
+    }
+
+
+
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile "com.android.support:appcompat-v7:25.2.0"
+        compile "com.android.support:support-v4:25.2.0"
+        compile "com.android.support:cardview-v7:25.2.0"
+        compile "com.android.support:recyclerview-v7:25.2.0"
+        compile "com.android.support:design:25.2.0"
+        compile "com.android.support:customtabs:25.2.0"
+        compile "com.android.support:palette-v7:25.2.0"
+        compile 'com.squareup.retrofit2:retrofit:2.0.0'
+        compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+        compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        compile 'org.greenrobot:eventbus:3.0.0'
+        compile 'com.jakewharton.timber:timber:4.1.0'
+        compile 'com.jakewharton:butterknife:8.4.0'
+        compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+        compile 'com.facebook.fresco:fresco:1.1.0'
+
+        //apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+        // Googleplay Variant
+        googleplayCompile 'com.google.android.gms:play-services-maps:10.2.0'
+
+        // Fdroid Variant
+        fdroidCompile 'org.osmdroid:osmdroid-android:5.1'
+        fdroidCompile 'org.apache.directory.studio:org.slf4j.api:1.7.2'
+        fdroidCompile 'org.slf4j:slf4j-simple:1.7.14'
+
+        // Unit Test
+        testCompile 'junit:junit:4.12'
+        testCompile "org.robolectric:robolectric:3.0"
+
+        //Instrumentation Test
+        androidTestCompile "com.android.support:support-annotations:${SUPPORT_LIB_VERSION}"
+        androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+        androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
+        androidTestCompile 'com.android.support.test:runner:0.5'
+        androidTestCompile 'com.android.support.test:rules:0.5'
+        androidTestCompile "org.mockito:mockito-core:1.10.19"
+
+        // Catch all the leaks
+        debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1' // or 1.4-beta1
+        releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1' // or 1.4-beta1
+        testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1' // or 1.4-beta1
+
+    }
+}

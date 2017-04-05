@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/ll_speakers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txt_no_speakers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/noSpeakers"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/speaker_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <org.bvrit.evemythra.views.AutofitGridRecyclerView
+                android:id="@+id/rv_speakers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:columnWidth="@dimen/widget_default_height"
+                android:padding="@dimen/padding_small"
+                android:visibility="gone"
+                tools:listitem="@layout/item_speaker"
+                tools:visibility="visible" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</layout>

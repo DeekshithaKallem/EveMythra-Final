@@ -1,0 +1,54 @@
+<resources>
+    <dimen name="main_menu_item_height">48dp</dimen>
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="heading_gap">16dp</dimen>
+    <dimen name="social_image_icon">30dp</dimen>
+    <item name="body_1_spacing" format="float" type="dimen">1.22448979592</item>
+    <dimen name="content_detail_margin">64dp</dimen>
+    <dimen name="content_name_margin">50dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="app_bar_height">150dp</dimen>
+
+    <!--Session Detail Activity -->
+    <dimen name="layout_margin_bottom">25dp</dimen>
+    <dimen name="layout_margin_left">35dp</dimen>
+    <dimen name="layout_margin_right">20dp</dimen>
+
+    <!--widget specifics -->
+    <dimen name="widget_default_height">180dp</dimen>
+    <dimen name="widget_min_resize_width">220dp</dimen>
+
+    <!-- text size -->
+    <dimen name="heading_text_size">20sp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <!-- fab specifics -->
+    <dimen name="fab_width">48dp</dimen>
+    <dimen name="fab_height">48dp</dimen>
+
+    <!-- margin specifics -->
+    <dimen name="layout_margin_small">4dp</dimen>
+    <dimen name="layout_margin_medium">8dp</dimen>
+    <dimen name="layout_margin_large">16dp</dimen>
+
+    <!-- padding specifics -->
+    <dimen name="padding_extra_small">2dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <!--ProgressBar-->
+    <dimen name="top_progressbar_margin">-10dp</dimen>
+    <dimen name="bottom_progressbar_margin">-6dp</dimen>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>
